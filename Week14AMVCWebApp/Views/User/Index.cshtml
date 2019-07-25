@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Week14AMVCWebApp.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+            </tr>
+        }
+
+        <tr>
+            <td>
+                @Html.ActionLink("AddNewUser", "Add", new { controller = "User", action = "Add", id = UrlParameter.Optional })
+            </td>
+        </tr>
+    </table>
+</div>
+
+
